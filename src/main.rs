@@ -51,9 +51,7 @@ fn select_input() -> u32 {
 
         // 입력
         let mut input = String::new();
-        io::stdin()
-            .read_line(&mut input)
-            .expect("failed to read line");
+        io::stdin().read_line(&mut input).expect("failed to read line");
 
         // 유효성 검사
         // 1~3 사이의 숫자면 반환하고 함수종료. 아니면 안내문 출력하고 반복
@@ -75,9 +73,7 @@ fn temperature_input() -> f64 {
 
         // 입력
         let mut input = String::new();
-        io::stdin()
-            .read_line(&mut input)
-            .expect("failed to read line");
+        io::stdin().read_line(&mut input).expect("failed to read line");
 
         // 유효성 검사
         match input.trim().parse::<f64>() {
