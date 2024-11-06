@@ -57,7 +57,7 @@ fn select_input() -> u32 {
         // 1~3 사이의 숫자면 반환하고 함수종료. 아니면 안내문 출력하고 반복
         match input.trim().parse::<u32>() {
             Ok(select) if (1..=3).contains(&select) => return select,
-            _ => println!("1과 3사이의 숫자를 입력해주세요."),
+            _ => println!("\n\t1과 3사이의 숫자를 입력해주세요."),
         }
     }
 }
@@ -68,7 +68,7 @@ fn select_input() -> u32 {
 fn temperature_input() -> f64 {
     loop {
         // 온도 입력 안내문 출력
-        print! {"온도를 입력해주세요 : "};
+        print! {"\t온도를 입력해주세요 : "};
         io::stdout().flush().expect("failed to flush stdout"); // flush를 호출하여 출력이 즉시 표시되도록 함 - 커서 문제때문에 넣었음
 
         // 입력
@@ -78,7 +78,7 @@ fn temperature_input() -> f64 {
         // 유효성 검사
         match input.trim().parse::<f64>() {
             Ok(temperature) => return temperature,
-            Err(_) => println!("올바른 온도를 입력해주세요."),
+            Err(_) => println!("\t올바른 온도를 입력해주세요."),
         };
     }
 }
@@ -95,5 +95,5 @@ fn convert_temperature_c_to_f(celsius: f64) -> f64 {
 
 // 변환된 온도를 출력해주는 함수
 fn print_convert_temperature(convert_temperature: f64) {
-    println!("변환된 온도 : {convert_temperature:.1}");
+    println!("\t변환된 온도 : {convert_temperature:.1}");
 }
